@@ -1,6 +1,6 @@
 # F1 Discord Bot
 
-A feature-rich Discord bot that provides Formula 1 information, including race schedules, driver details, live timing, and more.
+Discord bot that provides Formula 1 information, including race schedules, driver details, live timing, and more.
 
 ## Features
 
@@ -45,7 +45,21 @@ npm install
 
 3. Create a `.env` file with the following variables:
 ```env
-DISCORD_TOKEN=your_discord_bot_token
+DISCORD_TOKEN=
+CLIENT_ID=
+
+# Optional: base URLs for Jolpica and OpenF1 data sources
+JOLPICA_BASE_URL=
+OPENF1_BASE_URL=
+MONGODB_URI=
+TWITTER_BEARER_TOKEN=
+
+
+# Optional: HTTP request timeout in milliseconds (default: 10000)
+HTTP_TIMEOUT=10000
+
+# Optional: max retries for rate-limiting/backoff (default: 3)
+MAX_RETRIES=3
 ```
 
 4. Deploy the commands:
