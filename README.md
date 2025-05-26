@@ -32,6 +32,8 @@ A feature-rich Discord bot that provides Formula 1 information, including race s
 
 ## Setup
 
+### Local Setup
+
 1. Clone the repository:
 ```bash
 git clone https://github.com/LSWasTaken/t6.git
@@ -57,6 +59,25 @@ node src/deploy-commands.js
 ```bash
 node src/index.js
 ```
+
+### Replit Setup
+
+1. Fork this repository to your GitHub account
+2. Go to [Replit](https://replit.com) and create a new Repl
+3. Choose "Import from GitHub" and select your forked repository
+4. In the Replit shell, run:
+```bash
+npm install
+```
+5. Add your environment variables in Replit:
+   - Click on "Tools" in the left sidebar
+   - Select "Secrets"
+   - Add your `DISCORD_TOKEN` as a secret
+6. Deploy the commands:
+```bash
+node src/deploy-commands.js
+```
+7. Click the "Run" button to start the bot
 
 ## Technologies Used
 
