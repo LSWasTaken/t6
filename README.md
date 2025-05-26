@@ -1,6 +1,6 @@
 # F1 Discord Bot
 
-A feature-rich Discord bot that provides Formula 1 information, including race schedules, driver details, live timing, and more.
+Discord bot that provides Formula 1 information, including race schedules, driver details, live timing, and more.
 
 ## Features
 
@@ -32,8 +32,6 @@ A feature-rich Discord bot that provides Formula 1 information, including race s
 
 ## Setup
 
-### Local Setup
-
 1. Clone the repository:
 ```bash
 git clone https://github.com/LSWasTaken/t6.git
@@ -47,7 +45,21 @@ npm install
 
 3. Create a `.env` file with the following variables:
 ```env
-DISCORD_TOKEN=your_discord_bot_token
+DISCORD_TOKEN=
+CLIENT_ID=
+
+# Optional: base URLs for Jolpica and OpenF1 data sources
+JOLPICA_BASE_URL=
+OPENF1_BASE_URL=
+MONGODB_URI=
+TWITTER_BEARER_TOKEN=
+
+
+# Optional: HTTP request timeout in milliseconds (default: 10000)
+HTTP_TIMEOUT=10000
+
+# Optional: max retries for rate-limiting/backoff (default: 3)
+MAX_RETRIES=3
 ```
 
 4. Deploy the commands:
@@ -59,25 +71,6 @@ node src/deploy-commands.js
 ```bash
 node src/index.js
 ```
-
-### Replit Setup
-
-1. Fork this repository to your GitHub account
-2. Go to [Replit](https://replit.com) and create a new Repl
-3. Choose "Import from GitHub" and select your forked repository
-4. In the Replit shell, run:
-```bash
-npm install
-```
-5. Add your environment variables in Replit:
-   - Click on "Tools" in the left sidebar
-   - Select "Secrets"
-   - Add your `DISCORD_TOKEN` as a secret
-6. Deploy the commands:
-```bash
-node src/deploy-commands.js
-```
-7. Click the "Run" button to start the bot
 
 ## Technologies Used
 
