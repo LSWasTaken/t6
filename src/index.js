@@ -2,6 +2,7 @@ require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
+const { updatePresence } = require('./presence');
 
 // Debug: Check if environment variables are loaded
 console.log('Environment check:');
@@ -48,6 +49,17 @@ for (const file of eventFiles) {
         client.on(event.name, (...args) => event.execute(...args));
     }
 }
+
+// Set up ready event
+client.once('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+    updatePresence(client);
+    
+    // Update presence every 15 minutes
+    setInterval(() => {
+        updatePresence(client);
+    }, 15 * 60 * 1000);
+});
 
 // Error handling
 process.on('unhandledRejection', error => {
