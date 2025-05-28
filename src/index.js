@@ -53,6 +53,8 @@ for (const file of eventFiles) {
 // Set up ready event
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Bot is in ${client.guilds.cache.size} guilds`);
+    
     updatePresence(client);
     
     // Update presence every 15 minutes
